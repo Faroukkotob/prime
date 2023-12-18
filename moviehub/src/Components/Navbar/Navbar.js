@@ -7,9 +7,20 @@ import MovieIcon from '@mui/icons-material/Movie';
 import SearchIcon from '@mui/icons-material/Search';
 import TvIcon from '@mui/icons-material/Tv';
 import StarRateIcon from '@mui/icons-material/StarRate';
+import {useEffect} from "react";
+import { useNavigate } from "react-router-dom"; 
 
-export default function SimpleBottomNavigation() {
+export default function Navbar() {
   const [value, setValue] = React.useState(0);
+  const navigate = useNavigate();
+  useEffect(() => {
+      if(value === 0) navigate('/');
+      else if(value === 1) navigate('/movies');
+      else if(value === 2) navigate('/series');
+      else if(value === 3) navigate('/search');
+      else if(value === 4) navigate('/rate');
+  },[value,navigate]
+  );
 
   return (
     <Box sx={{ width: 500 }}>
