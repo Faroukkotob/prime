@@ -5,12 +5,13 @@
     display: flex;
     justify-content: center;
     text-transform: uppercase;
-    background-color:rgb(48, 25, 52);;
+    /*background-color:rgb(48, 25, 52);*/
+    background-color:  #080808;
     font-family: "Montserrat", sans-serif;
     font-size: 4vw;
     padding-bottom: 15px;
     box-shadow: 0px 1px 5px black;
-    color: white;
+    color: rgb(90, 42, 100);
     z-index: 100;
 }
 
