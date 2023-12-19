@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import '../../Components/SingleContent/SignleContent'
 import SingleContent from "../../Components/SingleContent/SignleContent";
+import "./Trending.css";
 const Trending = () => {
     const [content, setContent] = useState([]);
 
@@ -28,7 +29,7 @@ const Trending = () => {
                         id={c.id} 
                         poster={c.poster_path} 
                         title={c.title || c.name} 
-                        date={c.first_air_data || c.release_date}
+                        date={c.first_air_date || c.release_date}
                         media_type={c.media_type}
                         vote_avaerge= {c.vote_avaerge}
                         />
