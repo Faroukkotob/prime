@@ -1,15 +1,18 @@
+import { Pagination } from "@mui/material";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import '../../Components/SingleContent/SignleContent'
 import SingleContent from "../../Components/SingleContent/SignleContent";
 import "./Trending.css";
+import '../../Components/Pagination/CustomPagination';
+import CustomPagination from "../../Components/Pagination/CustomPagination";
 const Trending = () => {
     const [content, setContent] = useState([]);
-
+    const [page,setPage] = useState(1);
     const fetchTrending = async () => {
 
         const {data} = await axios.get(
-            `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}`
+            `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
         );
         setContent(data.results);
         
@@ -17,7 +20,7 @@ const Trending = () => {
 
     useEffect(() => {
         fetchTrending();
-    },[]);
+    },[page]);
     return (
         <div>
             <span className="pageTitle">Trending</span>
@@ -31,11 +34,12 @@ const Trending = () => {
                         title={c.title || c.name} 
                         date={c.first_air_date || c.release_date}
                         media_type={c.media_type}
-                        vote_avaerge= {c.vote_avaerge}
+                        vote_average= {c.vote_average}
                         />
                     ))
                 }
             </div>
+            <CustomPagination setPage={setPage}/>
         </div>
     )
 }
