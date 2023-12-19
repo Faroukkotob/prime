@@ -1,8 +1,8 @@
-import { createMuiTheme, Pagination, ThemeProvider } from "@mui/material"
+import { createMuiTheme, createTheme, Pagination, ThemeProvider } from "@mui/material"
 
-const customTheme = createMuiTheme ({
+const customTheme = createTheme ({
     palette: {
-        type: "dark",
+        mode: "dark",
     }
 });
 
