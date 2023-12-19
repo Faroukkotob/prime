@@ -23,7 +23,7 @@ export default function Navbar() {
   );
 
   return (
-    <Box sx={{ width: 500 }}>
+    <Box sx={{ width: '100%' }}>
       <BottomNavigation
         showLabels
         value={value}
@@ -31,6 +31,7 @@ export default function Navbar() {
           setValue(newValue);
         }}
         sx={{
+          width: "100%",
           position: "fixed",
           bottom: 0,
           backgroundColor: '#36454F',
@@ -38,27 +39,27 @@ export default function Navbar() {
         }}
       >
         <BottomNavigationAction 
-            style = {{color:"white"}}
+            style = {{color:"#d8b218e5"}}
             label="Trending" 
             icon={<WhatshotIcon />} 
         />
         <BottomNavigationAction 
-            style = {{color:"white"}}
+            style = {{color:"#d8b218e5"}}
             label="Movies"  
             icon={<MovieIcon />} 
         />
         <BottomNavigationAction 
-            style = {{color:"white"}}
+            style = {{color:"#d8b218e5"}}
             label="Series" 
             icon={<TvIcon />} 
         />
          <BottomNavigationAction 
-            style = {{color:"white"}}
+            style = {{color:"#d8b218e5"}}
             label="Search" 
             icon={<SearchIcon />} 
         />
         <BottomNavigationAction 
-            style = {{color:"white"}}
+            style = {{color:"#d8b218e5"}}
             label="Rate Us" 
             icon={<StarRateIcon />} 
         />

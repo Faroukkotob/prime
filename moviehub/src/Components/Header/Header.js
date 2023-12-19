@@ -1,7 +1,7 @@
 import './Header.css';
 
 const Header = () => {
-    return <span className="header"> Cinemate  🎥</span>
+    return <span onClick={() => window.scroll(0,0)} className="header"> Cinemate  🎥</span>
 };
 
 export default Header;
